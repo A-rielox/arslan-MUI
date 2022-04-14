@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+
+import AppBarComp from "./components/AppBar";
+
+import Card from "./components/Card";
+import Carousel from "./components/Carousel";
+import Home from "./components/Home";
+import Table from "./components/Table";
+import Chips from "./components/Chips";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<AppBarComp />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/Cards" element={<Card />} />
+				<Route path="/Carousel" element={<Carousel />} />
+				<Route path="/Table" element={<Table />} />
+				<Route path="/Chips" element={<Chips />} />
+			</Routes>
+		</div>
+	);
 }
 
 export default App;
